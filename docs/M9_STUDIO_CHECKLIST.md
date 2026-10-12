@@ -1,0 +1,15 @@
+# M9 Studio acceptance checklist
+
+Build with `python tools/release_check.py`, open the generated place, then start a fresh Play session. Local Studio profiles reset because `StudioPersistence = false`.
+
+1. Claim a plot and buy the kennel. The entrance name is mounted on the facade, floor pads show text on their surfaces, and biome/upgrade/food boards have attached text. Confirm no giant gray slab or script errors.
+2. Inspect the shelter: three distinct open-front suites should have a bed, bowl, toy, and `READY` name board. Buy Beds upgrades with test cash and confirm six, then eight, distinct suites. Already sheltered pets must remain in their assigned slots.
+3. Meet a wild pet with E. The rescue dialog must show its name, rarity, personality-driven starting trust, mood, and progress. It must not immediately attach a leash. Calm repeatedly until `PET TRUSTED YOU!`, then click `LEASH PET`. Walk it through the shelter intake; its suite should show the pet name and an appropriate dog/cat/small-animal accent.
+4. Start another encounter. Offer a treat after collecting food from the bin: storage falls by one and trust rises faster. With no food, the offer is rejected and trust does not rise. Repeated button presses inside the server cooldown must not add trust or consume extra food. Sprint toward a nervous pet while interacting and check its small bounded retreat; it should remain near its original spawn.
+5. Try opening the dialog with no kennel, a full shelter, or while already leading a pet. Each must be rejected. Move beyond eight studs during an encounter; trust actions and leash must fail. Wait longer than `TrustSessionSeconds`; a stale dialog must close and a new encounter starts from initial trust.
+6. Deliver a pet, then feed, pet, brush, and play with it. Happiness rises and is visible in details. The adoption offer increases modestly as happiness rises. Adopt out the pet: the NPC/leash sequence remains intact and its housing board returns to `READY` only after departure. A cancelled adoption keeps the occupied suite.
+7. Reset while leading a pet, rename a sheltered pet, upgrade beds with sheltered pets, and leave/rejoin a plot. Confirm no duplicate slot occupancy, no stuck encounter lock, and saved pet happiness returns when Studio persistence is intentionally tested in a private test place.
+8. Run a two-client local server. Have both clients meet the same wild pet: only the first can gain trust during its active encounter. The other cannot leash or spend the first player's food. After the encounter expires or the first player leaves, the pet becomes available again. Foreign sheltered pet care/adoption remains blocked.
+9. Check a small mobile viewport and gamepad focus: dialog fits, calm/treat/leash/close are reachable, and the E-equivalent prompt works. Review server and client Output for errors and instance buildup.
+
+The command-line gate checks Luau syntax, pure trust/save rules, existing service regressions, preview export, Rojo packaging, and world floors. It cannot prove Studio rendering, touch controls, or live multiplayer replication; complete the checklist before publication.

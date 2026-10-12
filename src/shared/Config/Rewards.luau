@@ -1,0 +1,25 @@
+return {
+ DailyCount = 3, ResetSeconds = 86400,
+ Dailies = {
+  {Id="Rescue",Title="Rescue 3 friends",Event="Rescue",Target=3,Cash=20},
+  {Id="Feed",Title="Feed pets twice",Event="Feed",Target=2,Cash=15},
+  {Id="Food",Title="Collect 10 treats",Event="CollectFood",Target=10,Cash=15},
+  {Id="Care",Title="Care for pets 3 times",Event="Care",Target=3,Cash=15},
+  {Id="Upgrade",Title="Improve your shelter",Event="Upgrade",Target=1,Cash=20},
+  {Id="Adopt",Title="Find a pet a new home",Event="Adopt",Target=1,Cash=15},
+  {Id="Discover",Title="Discover a new friend",Event="Discover",Target=1,Cash=20},
+  {Id="Rare",Title="Rescue a Rare pet",Event="Rescue",Detail="Rare",Target=1,Cash=25},
+  {Id="Forest",Title="Visit Whisperwood",Event="Visit",Detail="Forest",Target=1,Cash=10},
+  {Id="Park",Title="Visit the Dog Park",Event="Visit",Detail="DogPark",Target=1,Cash=10},
+ },
+ Milestones = {{Id="Collection5",Target=5,Cash=35},{Id="Collection10",Target=10,Cash=70},{Id="Collection20",Target=20,Cash=140}},
+ Guided = {
+  {Title="Build a kennel, then follow the Dog Park trail",Event="Visit",Detail="DogPark"},
+  {Title="Rescue a friend with E or touch",Event="Rescue"},
+  {Title="Bring your leashed friend into your kennel",Event="Deliver"},
+  {Title="Press Generate at your pantry",Event="Generate"},
+  {Title="Collect treats from the pantry bin",Event="CollectFood"},
+  {Title="View your pet and Feed it",Event="Feed"},
+  {Title="Keep your friend or adopt it; explore the Forest next",Event="Visit",Detail="Forest"},
+ },
+}
